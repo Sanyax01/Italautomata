@@ -8,9 +8,9 @@ namespace Italautomata
 {
 	internal class ForroItal
 	{
-		private string nev;
-		private int ar;
-		private int cukor;
+		protected string nev;
+		protected int ar;
+		protected int cukor;
 
 		public ForroItal(string nev, int mennyiseg, int cukor)
 		{
@@ -24,7 +24,15 @@ namespace Italautomata
 		public int Cukor { get => cukor; set => cukor = value; }
 
 
+		public void ArEmeles(int osszeg)
+		{
+			this.ar += osszeg;
+		}
 
+		public virtual void Aremeles()
+		{
+			this.ar += (int)(this.ar*0.2);
+		}
 
 		public override string ToString()
 		{
